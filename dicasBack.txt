@@ -1,0 +1,51 @@
+postgres
+docker ps - para exibir os containers
+docker start database - inicia o container (depois do start é o nome do container, pode ser pelo id tbm)
+docker logs database - visualiza os erros
+docker container ls --all
+
+sequelize
+ - ORM - abstração do banco de dados
+ - Migrations - controle de versão para base de dados
+ - Seeds - popula a base de dados (dados para teste)
+ - yarn sequelize migration:create --name=create-users (criando o arquivo para uma migration)
+ - yarn sequelize db:migrate (criando em sí a tabela no banco)
+
+Arquetetura MVC
+ - Model (absração do banco)
+ - Controller (ponto de entrada das requisições) (métodos: index, show, store, update e delete)
+ - View (retorno para cliente)
+
+Eslint
+ - yarn eslint --fix src --ext .js (aplica em todos os arquivos js de src o eslint)
+
+JWT
+ - Autenticação rest
+ - Token em formato JSON
+ - Formado por headers (tipo de token, algoritmo), payload (dados adicionais) e assinatura (segurança)
+
+Multer
+ - upload de arquivos
+
+Mongo DB
+ - bando de dados não relacional
+ - usa o mongoose como ORM
+ - não possui tabelas e sim esquemas ( que podem ter atributos diferentes )
+
+Redis
+ - gerenciamento de filas
+ - docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
+
+Sentry.io
+ - para pegar os erros da aplicação dando várias informações sobre o erro
+ - logado com github
+
+
+Coisas de que tenho dar start no docker
+ - docker start database (postgres)
+ - docker start mongobarber (mongodb)
+ - docker start redisbarber (redis)
+
+Coisas para dar start na aplicação node
+ - yarn dev (a aplicação em sí)
+ - yarn queue (as filas)
